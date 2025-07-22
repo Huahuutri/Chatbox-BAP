@@ -1,0 +1,68 @@
+/* ====== Điều chỉnh Container Chat ====== */
+.chat-container {
+  width: 300px; /* Chiều rộng container */
+  height: 400px; /* Chiều cao container */
+  border: 2px solid #007bff; /* Viền màu xanh */
+  border-radius: 10px; /* Bo góc */
+  padding: 10px; /* Khoảng cách bên trong */
+  background-color: #add1f5; /* Màu nền */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
+  margin: 20px auto; /* Căn giữa */
+  overflow-y: auto; /* Cuộn dọc nếu nội dung dài */
+}
+#chat-box {
+  position: relative; /* Thay đổi từ fixed sang relative để tăng tính phản hồi */
+  top: 0; /* Loại bỏ vị trí cố định */
+  width: 100%; /* Chiều rộng đầy đủ để tăng tính phản hồi */
+  max-width: 900px; /* Giới hạn chiều rộng trên màn hình lớn */
+  margin: 0 auto; /* Căn giữa hộp chat */
+  overflow-y: auto; /* Nội dung cuộn được */
+  padding: 10px; /* Đệm bên trong để bố cục tốt hơn */
+}
+
+/* ====== Điều chỉnh Phản hồi ====== */
+@media (max-width: 768px) {
+  #chat-container {
+    margin-top: 100px; /* Giảm lề cho màn hình nhỏ hơn */
+    min-height: calc(
+      100vh - 140px
+    ); /* Điều chỉnh cho header/footer trên mobile */
+    max-height: calc(100vh - 140px);
+    padding-bottom: 10px;
+  }
+
+  #chat-box {
+    padding: 5px; /* Giảm đệm cho mobile */
+    max-width: 100%; /* Chiều rộng đầy đủ trên mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  #chat-container {
+    margin-top: 80px; /* Giảm thêm cho màn hình rất nhỏ */
+    min-height: calc(100vh - 120px);
+    max-height: calc(100vh - 120px);
+  }
+
+  #chat-box {
+    padding: 3px;
+  }
+}
+
+/* ====== Đảm bảo Tính Nhất quán Chiều cao Header ====== */
+header {
+  height: 50px; /* Chiều cao cố định để khớp với margin-top của chat-container */
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 50px; /* Điều chỉnh chiều cao cho mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 60px; /* Điều chỉnh cho màn hình rất nhỏ */
+  }
+}
